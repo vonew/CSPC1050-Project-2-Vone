@@ -19,7 +19,7 @@ class Game: # where the game will be executed
         while not self.game_over: # while game is not over
             self.show_location() # displaying location
             self.input_choice() # choices for interacting with game
-        self.print_outputlog
+        self.print_outputlog()
     def show_location(self):
         location_info = self.map.get_location(self.locations)
         print("\n" + location_info["description"]) # printing location description
@@ -29,7 +29,7 @@ class Game: # where the game will be executed
         print("3. Check inventory")
 
     def input_choice(self):
-        choice = input("Enter your choice by typing in the numbers 1,2, or 3 based on the list of choices below: ")
+        choice = input("Enter your choice by typing in the numbers 1,2, or 3 based on the list of choices below: ").strip()
         if choice == "1":
             self.solve_riddle()
         elif choice == "2":
@@ -43,7 +43,7 @@ class Game: # where the game will be executed
         location_info = self.map.get_location(self.locations)
         print("Here's the riddle: ")
         print(location_info["riddle"])
-        answer = input("Enter your answer: ").lower()
+        answer = input("Enter your answer: ").lower().strip()
 
         if answer == location_info["answer"].lower():
             artifact_type = location_info["artifact"]
