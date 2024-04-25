@@ -51,6 +51,8 @@ class Game: # where the game will be executed
             print("Correct! You found the", artifact)
             self.player.add_to_inventory(location_info["artifact"])
             del self.map.locations[self.locations]
+            with open('outputlog.txt', 'a') as log:
+                log.write(f"Found: {artifact_type}\n")
             if not self.map.locations:
                 self.game_over = True
                 print("Congratulations! You have collected all of the powerful artifacts and won the game!")
@@ -65,7 +67,7 @@ class Game: # where the game will be executed
         hint_choice = input("Enter 'yes' for a hint or any key to try again: ")
 
         if hint_choice == 'yes':
-            print("Hint", location_info["hint"])
+            print("Hint:", location_info["hint"])
         else:
             print("Here's the riddle again:")
             print(location_info["riddle"])
