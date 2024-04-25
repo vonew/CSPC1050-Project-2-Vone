@@ -19,7 +19,7 @@ class Game: # where the game will be executed
         while not self.game_over: # while game is not over
             self.show_location() # displaying location
             self.input_choice() # choices for interacting with game
-
+        self.print_outputlog
     def show_location(self):
         location_info = self.map.get_location(self.locations)
         print("\n" + location_info["description"]) # printing location description
@@ -60,6 +60,14 @@ class Game: # where the game will be executed
                 self.move_location()
         else:
             self.wrong_answer()
+
+    def print_outputlog(self):
+        print(" End of Game Log:")
+        try:
+            with open('outputlog.text', 'r') as log:
+                print(log.read())
+        except FileNotFoundError:
+            print("outputlog.txt cannot be found.")
 
     def wrong_answer(self):
         location_info = self.map.get_location(self.locations)
