@@ -1,5 +1,6 @@
 from player import Player
 from map import Map
+from artifact import Artifact
 
 class Game: # where the game will be executed 
     def __init__(self):
@@ -45,7 +46,9 @@ class Game: # where the game will be executed
         answer = input("Enter your answer: ").lower()
 
         if answer == location_info["answer"].lower():
-            print("Correct! You found the", location_info["artifact"])
+            artifact_type = location_info["artifact"]
+            artifact = Artifact(artifact_type)
+            print("Correct! You found the", artifact)
             self.player.add_to_inventory(location_info["artifact"])
             del self.map.locations[self.locations]
             if not self.map.locations:
