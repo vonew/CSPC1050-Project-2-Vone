@@ -16,9 +16,12 @@ class Game: # where the game will be executed
         self.player = Player(input("Enter your name: ")) # player enters name 
 
     def play(self):
+        open("outputlog.txt","w").close()
         while not self.game_over: # while game is not over
             self.show_location() # displaying current location
             self.input_choice() # choices for interacting with game so the player can choose
+        
+        
     
     def show_location(self): 
         location_info = self.map.get_location(self.locations) # calling location from map file
@@ -56,7 +59,7 @@ class Game: # where the game will be executed
             if not self.map.locations: # if all locations were found
                 self.game_over = True # game is over  
                 print("Congratulations! You have collected all of the powerful artifacts and won the game!") # description for when game is over
-                with open('outputlog.txt', 'r') as log: # reading txt 
+                with open('outputlog.txt', 'r+') as log: # reading txt 
                     contents = log.read() 
                 print(contents) # printing artifacts found after game is completed
             else:
@@ -82,11 +85,15 @@ class Game: # where the game will be executed
 
         new_location = input("Enter the location you want to move to next: ").strip().lower() # entering next location 
         
-        if new_location in ['forest', 'river', 'cave', 'mountain']: # if next location is in this list
-            self.locations = new_location # allow player to enter that location
-        else:
+        while new_location not in ["forest", "river", "cave", "mountain"]: # if next location is in this list
             print("Invalid location, try again.") # if new_location was not in the list provided 
+            print("Available locations left:")
+            for location in self.map.locations: # for each location from location dictionary in the map file
+                print("-", location.capitalize()) # capitalizes 1st letter of each location name only
+            new_location = input("Enter the location you want to move to next: ").strip().lower() # entering next location 
+            
 
+        self.locations = new_location # allow player to enter that location
 
 
     

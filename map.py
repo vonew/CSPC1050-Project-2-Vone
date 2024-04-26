@@ -20,8 +20,9 @@ class Map: # calling the Map class
                 "hint": "Think of something somebody told you that you could not tell."},
             "river": {"description": "You approach a flowing river with dirty, murky water.", 
                 "riddle": "What always ends everything?",
-                "answer": " A G", "artifact": "Holy Water",
+                "answer": "A G", "artifact": "Holy Water",
                 "hint": "It's a letter, don't think to hard."}}
     
-    def get_location(self, location): # getting location 
-        return self.locations[location] # retrieving location 
+    def get_location(self, location): # getting location
+        if location:
+            return self.locations[location] # retrieving location 

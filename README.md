@@ -5,7 +5,7 @@ Class: CPSC 1050
 Section: 001
 RPG Game: The Quest for the Powerful Artifact
 
-Game Description: Welcome to The Quest for the Powerful Artifacts! This is and RPG adventure game where you will embark on a journey to different biomes to solve riddles and collect powerful artifacts!
+Game Description: Welcome to The Quest for the Powerful Artifacts! This is an RPG adventure game where you will embark on a journey to different biomes to solve riddles and collect powerful artifacts!
 
 How to Play:
 1. Run python main.py in the Terminal to start the game. When prompted, enter your name or if you want, create your own name for your character. 
@@ -24,3 +24,4 @@ File Descriptions:
 2. player.py: Has the Player class for keeping your information such as the inventory when playing. 
 3. map.py: Defines the Map class that contains different locations and their information
 4. game.py: Has the Game class for starting, playing, and ending the game.
+5. outputlog.txt: outputs every powerful artifact found throughout game
