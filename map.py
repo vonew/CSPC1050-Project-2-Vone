@@ -1,5 +1,6 @@
 class Map: # calling the Map class
     def __init__(self): # Going through each location
+        # A dictionary for each biome with their description and riddles, etc.
         self.locations = {
             "forest": {
                 "description": "You are dark and mysterious dense forest.",
@@ -19,8 +20,8 @@ class Map: # calling the Map class
                 "hint": "Think of something somebody told you that you could not tell."},
             "river": {"description": "You approach a flowing river with dirty, murky water.", 
                 "riddle": "What always ends everything?",
-                "answer": "G", "artifact": "Holy Water",
+                "answer": " A G", "artifact": "Holy Water",
                 "hint": "It's a letter, don't think to hard."}}
     
-    def get_location(self, location):
-        return self.locations[location]
+    def get_location(self, location): # getting location 
+        return self.locations[location] # retrieving location 
