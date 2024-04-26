@@ -4,6 +4,7 @@ Date: 4/23/2024
 Class: CPSC 1050
 Section: 001
 RPG Game: The Quest for the Powerful Artifact
+Github Link To Game: https://github.com/vonew/CSPC1050-Project-2-Vone.git
 
 Game Description: Welcome to The Quest for the Powerful Artifacts! This is an RPG adventure game where you will embark on a journey to different biomes to solve riddles and collect powerful artifacts!
 
